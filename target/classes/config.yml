@@ -2,25 +2,23 @@
 # This file allows you to configure SimplyChest, including migrating data from
 # SQLite to MySQL. Follow the steps below carefully to ensure a smooth setup.
 
-#                                ᴅᴀᴛᴀʙᴀsᴇ ᴄᴏɴғɪɢᴜʀᴀᴛɪᴏɴ
-# To migrate from SQLite to MySQL:
-# 1. Set the MySQL details below but keep `use: false`.
-# 2. Use the '/simplychest migrate' command in-game or via console to complete the migration.
-# 3. After successful migration, restart your server.
-
 simplychest:
   settings:
     prefix: ' &fsɪᴍᴘʟʏ&b&lᴄʜᴇsᴛ &7| &r'
     debug: false # Fatal errors will still be shown even if false!
+  command:
+    use: true  # Allows users with the specified permission to open their Ender Chest using /enderchest [/ec].
+    permission: 'simplychest.enderchest'  # Permission node required to use the Ender Chest command.
   effect:
     use: true # DEFAULT: true
     sound: ENTITY_PLAYER_LEVELUP # You can find them here -> https://sentinal.net/list
     particles: REDSTONE # You can find them here -> https://sentinal.net/list
 
-permissions:
-  management: 'simplychest.management' # This is the permission that opens the Administrative GUI
-  migrate: 'simplychest.migrate'
-  enderchest: 'simplychest.enderchest'
+#                                ᴅᴀᴛᴀʙᴀsᴇ ᴄᴏɴғɪɢᴜʀᴀᴛɪᴏɴ
+# To migrate from SQLite to MySQL:
+# 1. Set the MySQL details below but keep `use: false`.
+# 2. Use the '/simplychest migrate' command in-game or via console to complete the migration.
+# 3. After successful migration, restart your server.
 
 sqlite:
   use: true  # Set to true to use SQLite for storing data.

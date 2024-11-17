@@ -1,9 +1,14 @@
 package de.proxyfile.simplyChest;
 
 import de.proxyfile.simplyChest.essentials.QueryHandler;
+import de.proxyfile.simplyChest.essentials.UtilityHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public final class SimplyChest extends JavaPlugin {
 
@@ -16,7 +21,7 @@ public final class SimplyChest extends JavaPlugin {
 
         // Cᴏɴғɪɢᴜʀᴀᴛɪᴏɴ - Sᴇᴄᴛɪᴏɴ
         this.saveDefaultConfig();
-        prefix = getConfig().getString("simplychest.settings.prefix");
+        prefix = UtilityHelper.translate(getConfig().getString("simplychest.settings.prefix"));
 
         // Cᴏᴍᴍᴀɴᴅ - Rᴇɢɪsᴛʀʏ
 

@@ -1,0 +1,6 @@
+name: SimplyChest
+version: '1.0'
+main: de.proxyfile.simplyChest.SimplyChest
+api-version: '1.18'
+authors: [ ProxyFile ]
+description: An easy-to-use ender chest system with extensive customization options.
