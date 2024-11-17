@@ -3,8 +3,8 @@ package de.proxyfile.simplyChest.essentials;
 import de.proxyfile.simplyChest.SimplyChest;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class QueryHandler {
     private static String currentMethod;
@@ -30,22 +30,15 @@ public class QueryHandler {
         }
     }
 
-    public static void createStatement() {
-        if(mysql == null || sqlite == null) {
-            if(currentMethod.equals("MySQL")) {
-
-            } else if(currentMethod.equals("SQLite")) {
-
-            }
-        } else {
-            UtilityHelper.log("error", "The QueryHandler was not initialized at the time of execution. Please restart the server to resolve this issue.");
-        }
-    }
-
     public static PreparedStatement prepareStatement(String query) {
         if(mysql == null || sqlite == null) {
             if(currentMethod.equals("MySQL")) {
-
+                try {
+                    PreparedStatement prep = mysql.get().prepareStatement(query);
+                    return prep;
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             } else if(currentMethod.equals("SQLite")) {
                 try {
                     PreparedStatement prep = sqlite.get().prepareStatement(query);
@@ -59,6 +52,20 @@ public class QueryHandler {
             return null;
         }
         return null;
+    }
+
+    public static boolean isAvailable(PreparedStatement ps) {
+        ResultSet rs;
+        try {
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 
 }

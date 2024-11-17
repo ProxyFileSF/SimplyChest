@@ -4,6 +4,9 @@ import de.proxyfile.simplyChest.SimplyChest;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class UtilityHelper {
 
     public static void log(String type, String message) {
@@ -24,6 +27,15 @@ public class UtilityHelper {
 
     public static String translate(String msg) {
         return ChatColor.translateAlternateColorCodes('&', msg);
+    }
+
+    public static void createDefaults() {
+        PreparedStatement ps = QueryHandler.prepareStatement("CREATE TABLE IF NOT EXISTS sc_userdata (UUID VARCHAR(36), USERNAME VARCHAR(16))");
+        try {
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

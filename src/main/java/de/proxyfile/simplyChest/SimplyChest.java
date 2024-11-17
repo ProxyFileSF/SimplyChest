@@ -2,12 +2,12 @@ package de.proxyfile.simplyChest;
 
 import de.proxyfile.simplyChest.essentials.QueryHandler;
 import de.proxyfile.simplyChest.essentials.UtilityHelper;
+import de.proxyfile.simplyChest.listeners.PlayerEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public final class SimplyChest extends JavaPlugin {
@@ -27,9 +27,11 @@ public final class SimplyChest extends JavaPlugin {
 
         // Lɪsᴛᴇɴᴇʀ - Rᴇɢɪsᴛʀʏ
         PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new PlayerEvents(), this);
 
         // Oᴛʜᴇʀs - Sᴇᴄᴛɪᴏɴ
         QueryHandler.request();
+        UtilityHelper.createDefaults();
     }
 
     @Override

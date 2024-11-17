@@ -1,4 +1,5 @@
 de\proxyfile\simplyChest\essentials\QueryHandler.class
+de\proxyfile\simplyChest\listeners\PlayerEvents.class
 de\proxyfile\simplyChest\essentials\UtilityHelper.class
 de\proxyfile\simplyChest\essentials\MySQL.class
 de\proxyfile\simplyChest\SimplyChest.class
