@@ -1,5 +1,5 @@
 # SimplyChest Plugin
-[![GitHub stars](https://img.shields.io/github/stars/sprechender/imageconvert?style=social)](https://github.com/sprechender/imageconvert/stargazers)
+![GitHub Repo stars](https://img.shields.io/github/stars/ProxyFileSF/SimplyChest?style=social&label=Stars)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **SimplyChest** is a Minecraft plugin that enhances the functionality of Ender Chests, offering more customization and improved backend support. With SimplyChest, players can enjoy additional rows in their Ender Chests, a robust database system, and seamless migration between storage formats.
