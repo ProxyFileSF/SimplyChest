@@ -30,7 +30,7 @@ public class UtilityHelper {
     }
 
     public static void createDefaults() {
-        PreparedStatement ps = QueryHandler.prepareStatement("CREATE TABLE IF NOT EXISTS sc_userdata (UUID VARCHAR(36), USERNAME VARCHAR(16))");
+        PreparedStatement ps = QueryHandler.prepareStatement("CREATE TABLE IF NOT EXISTS sc_userdata (UUID VARCHAR(36), USERNAME VARCHAR(16), SIZE INT, INVENTORY JSON)");
         try {
             ps.execute();
         } catch (SQLException e) {

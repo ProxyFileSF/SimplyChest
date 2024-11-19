@@ -11,6 +11,7 @@
 simplychest:
   settings:
     prefix: ' &fsɪᴍᴘʟʏ&b&lᴄʜᴇsᴛ &7| &r'
+    size: 27 # Default enderchest size
     debug: false # Fatal errors will still be shown even if false!
   effect:
     use: true # DEFAULT: true
@@ -18,6 +19,7 @@ simplychest:
     particles: REDSTONE # You can find them here -> https://sentinal.net/list
 
 permissions:
+  usage: 'simplychest.use'
   management: 'simplychest.management' # This is the permission that opens the Administrative GUI
   migrate: 'simplychest.migrate'
   enderchest: 'simplychest.enderchest'

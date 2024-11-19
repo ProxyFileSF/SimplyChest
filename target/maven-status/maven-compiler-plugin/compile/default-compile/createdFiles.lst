@@ -1,6 +1,10 @@
 de\proxyfile\simplyChest\essentials\QueryHandler.class
+de\proxyfile\simplyChest\commands\testcmd.class
 de\proxyfile\simplyChest\listeners\PlayerEvents.class
+de\proxyfile\simplyChest\essentials\ChestHelper$1.class
+de\proxyfile\simplyChest\essentials\ChestHelper.class
 de\proxyfile\simplyChest\essentials\UtilityHelper.class
 de\proxyfile\simplyChest\essentials\MySQL.class
 de\proxyfile\simplyChest\SimplyChest.class
+de\proxyfile\simplyChest\essentials\ChestHelper$2.class
 de\proxyfile\simplyChest\essentials\SQLite.class

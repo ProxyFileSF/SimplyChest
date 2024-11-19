@@ -4,3 +4,5 @@ main: de.proxyfile.simplyChest.SimplyChest
 api-version: '1.18'
 authors: [ ProxyFile ]
 description: An easy-to-use ender chest system with extensive customization options.
+commands:
+  test:
